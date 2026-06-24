@@ -1,0 +1,126 @@
+/* --- ESTILOS GERAIS E ACESSIBILIDADE --- */
+:root {
+    --cor-fundo: #F4F6F9;
+    --cor-card: #FFFFFF;
+    --cor-texto: #1A1A1A;
+    --cor-primaria: #004687; /* Azul escuro para alto contraste */
+    --cor-alerta: #D9381E; /* Vermelho acessível para avisos */
+    --cor-sucesso: #1E7E34; /* Verde para dicas positivas */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 22px; /* Fonte maior para facilitar a leitura */
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p.subtitulo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* --- GUIA DE NAVEGAÇÃO / BOTÕES --- */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.botao-menu {
+    display: block;
+    background-color: #FFFFFF;
+    color: var(--cor-primaria);
+    border: 3px solid var(--cor-primaria);
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.botao-menu:hover, .botao-menu:focus {
+    background-color: var(--cor-primaria);
+    color: white;
+    outline: 4px solid #FFD700; /* Destaque amarelo para navegação por teclado */
+}
+
+/* --- SEÇÕES DE DICAS (CARDS) --- */
+.secao-dica {
+    background-color: var(--cor-card);
+    border-left: 10px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    scroll-margin-top: 20px; /* Ajuda na ancoragem do menu */
+}
+
+.secao-dica.alerta {
+    border-left-color: var(--cor-alerta);
+}
+
+.secao-dica.sucesso {
+    border-left-color: var(--cor-sucesso);
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+ul {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border-top: 2px solid #CCCCCC;
+}
+
+.btn-topo {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #333333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 20px;
+}
