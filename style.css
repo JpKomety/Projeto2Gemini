@@ -124,3 +124,24 @@ footer {
     border-radius: 8px;
     font-size: 20px;
 }
+.botao-emergencia {
+    display: block;
+    background-color: #D9381E; /* Vermelho vivo para chamar atenção */
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 26px; /* Fonte grande para leitura rápida */
+    font-weight: bold;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    border: 3px solid #A61C05;
+}
+
+.botao-emergencia:hover, .botao-emergencia:focus {
+    background-color: #A61C05; /* Cor mais escura ao passar o mouse */
+    outline: 4px solid #FFD700; /* Destaque amarelo para acessibilidade */
+    cursor: pointer;
+}
