@@ -1,8 +1,8 @@
 let tamanhoAtual = 18;
 const tamanhoMinimo = 14;
-const tamanhoMaximo = 28;
+const tamanhoMaximo = 26;
 
-// Função para alterar o tamanho da fonte da página
+// Aumenta ou diminui a fonte dinamicamente
 function alterarTamanhoFonte(variacao) {
   const novoTamanho = tamanhoAtual + variacao;
   if (novoTamanho >= tamanhoMinimo && novoTamanho <= tamanhoMaximo) {
@@ -11,17 +11,16 @@ function alterarTamanhoFonte(variacao) {
   }
 }
 
-// Função para leitura de voz do conteúdo total
+// Lê todo o conteúdo das dicas
 function lerTextoGeral() {
   pararLeitura();
   const texto = document.getElementById('conteudo-principal').innerText;
-  executarVoz("Iniciando leitura das dicas. " + texto);
+  executarVoz("Iniciando a leitura do guia. " + texto);
 }
 
-// Função para ler um cartão específico
+// Lê apenas o cartão selecionado
 function lerElemento(elemento) {
   pararLeitura();
-  // Lê apenas o texto do cartão, ignorando o texto do próprio botão
   const clone = elemento.cloneNode(true);
   const botao = clone.querySelector('button');
   if (botao) botao.remove();
@@ -29,19 +28,19 @@ function lerElemento(elemento) {
   executarVoz(clone.innerText);
 }
 
-// Função central de sintetizador de voz (SpeechSynthesis)
+// Função de síntese de voz nativa
 function executarVoz(texto) {
   if ('speechSynthesis' in window) {
     const mensagem = new SpeechSynthesisUtterance(texto);
     mensagem.lang = 'pt-BR';
-    mensagem.rate = 0.9; // Velocidade ligeiramente reduzida para facilitar a compreensão
+    mensagem.rate = 0.9; // Velocidade ajustada para facilitar a compreensão
     window.speechSynthesis.speak(mensagem);
   } else {
-    alert("Desculpe, seu navegador não suporta a função de leitura por voz.");
+    alert("Seu navegador não possui suporte para leitura por voz.");
   }
 }
 
-// Função para parar a leitura a qualquer momento
+// Interrompe a leitura por voz
 function pararLeitura() {
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();

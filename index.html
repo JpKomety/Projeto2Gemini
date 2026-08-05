@@ -3,58 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia de Segurança Digital para a Terceira Idade</title>
-  <!-- Ligação com o arquivo CSS -->
+  <title>Segurança Digital | Terceira Idade</title>
+  <!-- Fonte do Google Fonts para um visual moderno -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-  <!-- Barra Superior com Controles de Acessibilidade -->
-  <nav class="barra-acessibilidade" aria-label="Controles de Acessibilidade">
-    <button class="btn-acessibilidade" onclick="alterarTamanhoFonte(2)">A+ Aumentar Texto</button>
-    <button class="btn-acessibilidade" onclick="alterarTamanhoFonte(-2)">A- Diminuir Texto</button>
-    <button class="btn-acessibilidade" onclick="lerTextoGeral()">🔊 Ler Página Integrada</button>
-    <button class="btn-acessibilidade" onclick="pararLeitura()">⏹️ Parar Leitura</button>
-  </nav>
+  <!-- Barra de Acessibilidade -->
+  <div class="barra-acessibilidade">
+    <div class="container-barra">
+      <span class="tag-acessibilidade">Acessibilidade:</span>
+      <div class="grupo-botoes">
+        <button class="btn-acessibilidade" onclick="alterarTamanhoFonte(2)">A+ Aumentar</button>
+        <button class="btn-acessibilidade" onclick="alterarTamanhoFonte(-2)">A- Diminuir</button>
+        <button class="btn-acessibilidade btn-destaque" onclick="lerTextoGeral()">🔊 Ouvir Tudo</button>
+        <button class="btn-acessibilidade btn-perigo" onclick="pararLeitura()">⏹️ Parar</button>
+      </div>
+    </div>
+  </div>
 
-  <!-- Cabeçalho do App -->
-  <header>
-    <h1 id="titulo-principal">Segurança Digital Sem Mistério</h1>
-    <p>Aprenda a usar a internet de forma simples, segura e sem medo.</p>
+  <!-- Cabeçalho (Hero Section) -->
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Guia Prático</span>
+      <h1>Navegue com Segurança e Confiança</h1>
+      <p>Dicas simples e diretas para proteger seus dados, suas senhas e seu dinheiro na internet.</p>
+    </div>
   </header>
 
-  <!-- Conteúdo das Dicas -->
-  <main id="conteudo-principal">
-    <article class="cartao-dica">
-      <h2>1. Cuidado com Mensagens Suspeitas</h2>
-      <p>Se receber mensagens de bancos ou parentes pedindo dinheiro urgente pelo WhatsApp, não transfira nada na hora. Ligue para a pessoa ou para o banco para confirmar se é verdade.</p>
-      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
-    </article>
+  <!-- Conteúdo Principal -->
+  <main class="container" id="conteudo-principal">
+    
+    <div class="grid-dicas">
 
-    <article class="cartao-dica">
-      <h2>2. Crie Senhas Fortes e Anote em Local Seguro</h2>
-      <p>Evite usar datas de nascimento ou sequências como "123456". Combine letras e números. É mais seguro anotar suas senhas em um caderno em casa do que salvá-las no celular.</p>
-      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
-    </article>
+      <article class="cartao-dica">
+        <div class="icone-cartao">🛡️</div>
+        <h2>1. Cuidado com Mensagens Suspeitas</h2>
+        <p>Recebeu mensagem de banco ou parente pedindo dinheiro urgente pelo WhatsApp? Pare e respire. Ligue diretamente para a pessoa antes de realizar qualquer transferência.</p>
+        <button class="btn-ouvir" onclick="lerElemento(this.parentElement)">🔊 Ouvir dica</button>
+      </article>
 
-    <article class="cartao-dica">
-      <h2>3. Não Clique em Links Desconhecidos</h2>
-      <p>Links enviados por SMS ou e-mail prometendo prêmios, dinheiro fácil ou atualizações do INSS costumam ser golpes. Evite clicar neles.</p>
-      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
-    </article>
+      <article class="cartao-dica">
+        <div class="icone-cartao">🔑</div>
+        <h2>2. Crie Senhas Fortes e Protegidas</h2>
+        <p>Evite usar sua data de nascimento ou "123456". Misture letras e números. É muito mais seguro anotar suas senhas em um caderno em casa do que salvá-las no celular.</p>
+        <button class="btn-ouvir" onclick="lerElemento(this.parentElement)">🔊 Ouvir dica</button>
+      </article>
 
-    <article class="cartao-dica">
-      <h2>4. Mantenha seu Celular Atualizado</h2>
-      <p>Quando o celular pedir para atualizar o sistema, aceite. As atualizações corrigem falhas e mantêm o aparelho protegido contra vírus.</p>
-      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
-    </article>
+      <article class="cartao-dica">
+        <div class="icone-cartao">⚠️</div>
+        <h2>3. Atenção aos Links Desconhecidos</h2>
+        <p>Recebeu SMS ou e-mail prometendo prêmios, dinheiro fácil ou facilidades no INSS? Não clique. Links desconhecidos podem roubar seus dados pessoais.</p>
+        <button class="btn-ouvir" onclick="lerElemento(this.parentElement)">🔊 Ouvir dica</button>
+      </article>
+
+      <article class="cartao-dica">
+        <div class="icone-cartao">📱</div>
+        <h2>4. Mantenha o Celular Atualizado</h2>
+        <p>Quando o seu celular avisar que existe uma atualização de sistema disponível, aceite. Elas servem para corrigir falhas e fechar portas para hackers.</p>
+        <button class="btn-ouvir" onclick="lerElemento(this.parentElement)">🔊 Ouvir dica</button>
+      </article>
+
+    </div>
+
   </main>
 
   <footer>
-    <p>Aplicativo Educativo de Segurança Digital - Feito para Você</p>
+    <p>© 2026 Guia Digital da Terceira Idade • Desenvolvido para sua proteção</p>
   </footer>
 
-  <!-- Ligação com o arquivo JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
