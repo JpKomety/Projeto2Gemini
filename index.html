@@ -18,7 +18,7 @@
     <button onclick="changeFontSize(0.1)" aria-label="Aumentar tamanho do texto">A+ Aumentar Texto</button>
     <button onclick="changeFontSize(-0.1)" aria-label="Diminuir tamanho do texto">A- Diminuir Texto</button>
     <button onclick="toggleContrast()" aria-label="Alternar alto contraste">Alto Contraste</button>
-    <button onclick="toggleDeafMode()" aria-label="Ativar ou desativar modo para surdos">🤟 Modo Surdo / Libras</button>
+    <button onclick="toggleLibras()" aria-label="Mostrar ou ocultar intérprete de Libras">🤟 Intérprete Libras</button>
     <button onclick="readPageContent()" aria-label="Ouvir todo o conteúdo da página">🔊 Ler Tudo</button>
     <button onclick="stopSpeech()" aria-label="Parar leitura em voz alta">⏹️ Parar Voz</button>
   </div>
@@ -28,42 +28,59 @@
     <p>Dicas simples para navegar na internet sem medo e de forma segura.</p>
   </header>
 
-  <main id="main-content">
-    <section class="card" id="card-1">
-      <h2>1. Cuidado com Links Estranhos</h2>
-      <p>Nunca clique em links enviados por mensagens de pessoas desconhecidas no WhatsApp ou no e-mail. Bancos e lojas não pedem senhas pelo WhatsApp.</p>
-      <button class="btn-audio-card" onclick="readCard('card-1')" aria-label="Ouvir dica sobre cuidado com links estranhos">🔊 Ouvir esta dica</button>
-    </section>
+  <!-- Conteúdo Principal + Painel do Intérprete de Libras -->
+  <div class="app-layout">
+    <main id="main-content">
+      <section class="card" id="card-1">
+        <h2>1. Cuidado com Links Estranhos</h2>
+        <p>Nunca clique em links enviados por mensagens de pessoas desconhecidas no WhatsApp ou no e-mail. Bancos e lojas não pedem senhas pelo WhatsApp.</p>
+        <button class="btn-action-card" onclick="readCard('card-1')" aria-label="Ouvir dica sobre cuidado com links estranhos">🔊 Ouvir esta dica</button>
+        <button class="btn-action-card btn-libras-card" onclick="playLibras('Dica 1: Nunca clique em links suspeitos ou forneça senhas.')">🤟 Ver em Libras</button>
+      </section>
 
-    <section class="card" id="card-2">
-      <h2>2. Crie Senhas Fortes</h2>
-      <p>Evite usar datas de nascimento ou nomes de familiares. Misture letras, números e símbolos simples. Guarde suas senhas em um caderno em local seguro.</p>
-      <button class="btn-audio-card" onclick="readCard('card-2')" aria-label="Ouvir dica sobre como criar senhas fortes">🔊 Ouvir esta dica</button>
-    </section>
+      <section class="card" id="card-2">
+        <h2>2. Crie Senhas Fortes</h2>
+        <p>Evite usar datas de nascimento ou nomes de familiares. Misture letras, números e símbolos simples. Guarde suas senhas em um caderno em local seguro.</p>
+        <button class="btn-action-card" onclick="readCard('card-2')" aria-label="Ouvir dica sobre como criar senhas fortes">🔊 Ouvir esta dica</button>
+        <button class="btn-action-card btn-libras-card" onclick="playLibras('Dica 2: Crie senhas fortes misturando letras e números.')">🤟 Ver em Libras</button>
+      </section>
 
-    <section class="card" id="card-3">
-      <h2>3. Desconfie de Ofertas Exageradas</h2>
-      <p>Se um produto estiver muito barato ou prometendo dinheiro fácil, pode ser um golpe. Peça ajuda a um familiar antes de realizar qualquer compra online.</p>
-      <button class="btn-audio-card" onclick="readCard('card-3')" aria-label="Ouvir dica sobre ofertas exageradas">🔊 Ouvir esta dica</button>
-    </section>
+      <section class="card" id="card-3">
+        <h2>3. Desconfie de Ofertas Exageradas</h2>
+        <p>Se um produto estiver muito barato ou prometendo dinheiro fácil, pode ser um golpe. Peça ajuda a um familiar antes de realizar qualquer compra online.</p>
+        <button class="btn-action-card" onclick="readCard('card-3')" aria-label="Ouvir dica sobre ofertas exageradas">🔊 Ouvir esta dica</button>
+        <button class="btn-action-card btn-libras-card" onclick="playLibras('Dica 3: Cuidado com ofertas com preços muito baixos, pode ser golpe.')">🤟 Ver em Libras</button>
+      </section>
 
-    <!-- Seção de Acessibilidade para Pessoas Surdas -->
-    <section class="card deaf-section" id="card-deaf">
-      <h2>🤟 Atendimento Acessível em Libras / Texto</h2>
-      <p>Se você é surdo ou possui deficiência auditiva, pode solicitar ajuda via Chat por Texto ou Videochamada em Libras com um familiar ou suporte.</p>
-      <button class="btn-deaf-action" onclick="openLibrasSupport()">📱 Suporte por Texto / Libras</button>
-    </section>
+      <!-- Seção de Emergência -->
+      <section class="emergency-box" id="card-emergency">
+        <h2>Precisa de Ajuda Imediata?</h2>
+        <p>Se você suspeitar de um crime ou emergência, acione a Polícia Militar:</p>
+        <a href="tel:190" class="btn-emergency" onclick="triggerVisualAlert()" aria-label="Ligar para a polícia número 190">🚨 LIGAR 190</a>
+        <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+          <button class="btn-action-card" onclick="readCard('card-emergency')" aria-label="Ouvir informação de emergência">🔊 Ouvir emergência</button>
+          <button class="btn-action-card btn-libras-card" onclick="playLibras('Emergência: Para falar com a Polícia Militar, ligue 190.')">🤟 Libras Emergência</button>
+        </div>
+      </section>
+    </main>
 
-    <!-- Seção de Emergência -->
-    <section class="emergency-box" id="card-emergency">
-      <h2>Precisa de Ajuda Imediata?</h2>
-      <p>Se você suspeitar de um crime ou emergência, acione a Polícia Militar:</p>
-      <a href="tel:190" class="btn-emergency" onclick="triggerVisualAlert()" aria-label="Ligar para a polícia número 190">🚨 LIGAR 190</a>
-      <div style="margin-top: 15px;">
-        <button class="btn-audio-card" onclick="readCard('card-emergency')" aria-label="Ouvir informação de emergência">🔊 Ouvir emergência</button>
+    <!-- Painel Lateral Fixado do Intérprete de Libras -->
+    <aside id="libras-panel" class="libras-panel">
+      <div class="libras-box">
+        <div class="libras-header">
+          <span>🤟 Intérprete Virtual de Libras</span>
+          <button class="btn-close-libras" onclick="toggleLibras()">✕</button>
+        </div>
+        <div class="libras-video-container">
+          <img id="libras-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Intérprete de Libras realizando tradução em sinais">
+          <div class="libras-status-badge">🟢 Intérprete Ativo</div>
+        </div>
+        <div class="libras-caption" id="libras-caption">
+          Clique no botão "Ver em Libras" de qualquer dica para iniciar a tradução visual.
+        </div>
       </div>
-    </section>
-  </main>
+    </aside>
+  </div>
 
   <script src="script.js"></script>
 </body>

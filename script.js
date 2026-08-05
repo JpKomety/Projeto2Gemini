@@ -11,11 +11,26 @@ function toggleContrast() {
   document.body.classList.toggle('high-contrast');
 }
 
-// Alternar Modo Visual/Surdo (Aumenta o contraste visual e destaca opções de texto)
-function toggleDeafMode() {
-  document.body.classList.toggle('deaf-mode');
-  const active = document.body.classList.contains('deaf-mode');
-  alert(active ? "Modo para Surdos ativado! Textos e indicações visuais foram destacados." : "Modo para Surdos desativado.");
+// Alternar Visibilidade do Intérprete de Libras
+function toggleLibras() {
+  const panel = document.getElementById('libras-panel');
+  panel.classList.toggle('hidden');
+}
+
+// Executar interpretação em Libras
+function playLibras(captionText) {
+  const panel = document.getElementById('libras-panel');
+  panel.classList.remove('hidden');
+
+  const caption = document.getElementById('libras-caption');
+  caption.innerHTML = `<strong>Em Libras:</strong> ${captionText}`;
+
+  // Animação visual de sinalização no avatar
+  const avatar = document.getElementById('libras-avatar');
+  avatar.style.filter = "brightness(1.2)";
+  setTimeout(() => {
+    avatar.style.filter = "brightness(1)";
+  }, 1000);
 }
 
 // Alerta visual de emergência ao clicar no 190
@@ -25,11 +40,6 @@ function triggerVisualAlert() {
   setTimeout(() => {
     alertBanner.hidden = true;
   }, 5000);
-}
-
-// Ação para Suporte em Libras ou Texto
-function openLibrasSupport() {
-  alert("Iniciando canal de atendimento por texto / videochamada adaptada em Libras.");
 }
 
 // Leitura geral por Voz (Web Speech API)
