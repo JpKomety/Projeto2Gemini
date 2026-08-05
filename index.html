@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Segurança Digital para a Terceira Idade</title>
+  <!-- Ligação com o arquivo CSS -->
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- Barra Superior com Controles de Acessibilidade -->
+  <nav class="barra-acessibilidade" aria-label="Controles de Acessibilidade">
+    <button class="btn-acessibilidade" onclick="alterarTamanhoFonte(2)">A+ Aumentar Texto</button>
+    <button class="btn-acessibilidade" onclick="alterarTamanhoFonte(-2)">A- Diminuir Texto</button>
+    <button class="btn-acessibilidade" onclick="lerTextoGeral()">🔊 Ler Página Integrada</button>
+    <button class="btn-acessibilidade" onclick="pararLeitura()">⏹️ Parar Leitura</button>
+  </nav>
+
+  <!-- Cabeçalho do App -->
+  <header>
+    <h1 id="titulo-principal">Segurança Digital Sem Mistério</h1>
+    <p>Aprenda a usar a internet de forma simples, segura e sem medo.</p>
+  </header>
+
+  <!-- Conteúdo das Dicas -->
+  <main id="conteudo-principal">
+    <article class="cartao-dica">
+      <h2>1. Cuidado com Mensagens Suspeitas</h2>
+      <p>Se receber mensagens de bancos ou parentes pedindo dinheiro urgente pelo WhatsApp, não transfira nada na hora. Ligue para a pessoa ou para o banco para confirmar se é verdade.</p>
+      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
+    </article>
+
+    <article class="cartao-dica">
+      <h2>2. Crie Senhas Fortes e Anote em Local Seguro</h2>
+      <p>Evite usar datas de nascimento ou sequências como "123456". Combine letras e números. É mais seguro anotar suas senhas em um caderno em casa do que salvá-las no celular.</p>
+      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
+    </article>
+
+    <article class="cartao-dica">
+      <h2>3. Não Clique em Links Desconhecidos</h2>
+      <p>Links enviados por SMS ou e-mail prometendo prêmios, dinheiro fácil ou atualizações do INSS costumam ser golpes. Evite clicar neles.</p>
+      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
+    </article>
+
+    <article class="cartao-dica">
+      <h2>4. Mantenha seu Celular Atualizado</h2>
+      <p>Quando o celular pedir para atualizar o sistema, aceite. As atualizações corrigem falhas e mantêm o aparelho protegido contra vírus.</p>
+      <button class="btn-ler-cartao" onclick="lerElemento(this.parentElement)">🔊 Ouvir esta dica</button>
+    </article>
+  </main>
+
+  <footer>
+    <p>Aplicativo Educativo de Segurança Digital - Feito para Você</p>
+  </footer>
+
+  <!-- Ligação com o arquivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
