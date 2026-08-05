@@ -8,11 +8,17 @@
 </head>
 <body>
 
+  <!-- Alerta Visual para Emergência -->
+  <div id="visual-alert" class="visual-alert-banner" role="alert" aria-live="assertive" hidden>
+    ⚠️ ATENÇÃO: Chamada de emergência iniciada!
+  </div>
+
   <!-- Barra de Acessibilidade Superior -->
   <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
     <button onclick="changeFontSize(0.1)" aria-label="Aumentar tamanho do texto">A+ Aumentar Texto</button>
     <button onclick="changeFontSize(-0.1)" aria-label="Diminuir tamanho do texto">A- Diminuir Texto</button>
     <button onclick="toggleContrast()" aria-label="Alternar alto contraste">Alto Contraste</button>
+    <button onclick="toggleDeafMode()" aria-label="Ativar ou desativar modo para surdos">🤟 Modo Surdo / Libras</button>
     <button onclick="readPageContent()" aria-label="Ouvir todo o conteúdo da página">🔊 Ler Tudo</button>
     <button onclick="stopSpeech()" aria-label="Parar leitura em voz alta">⏹️ Parar Voz</button>
   </div>
@@ -41,11 +47,18 @@
       <button class="btn-audio-card" onclick="readCard('card-3')" aria-label="Ouvir dica sobre ofertas exageradas">🔊 Ouvir esta dica</button>
     </section>
 
+    <!-- Seção de Acessibilidade para Pessoas Surdas -->
+    <section class="card deaf-section" id="card-deaf">
+      <h2>🤟 Atendimento Acessível em Libras / Texto</h2>
+      <p>Se você é surdo ou possui deficiência auditiva, pode solicitar ajuda via Chat por Texto ou Videochamada em Libras com um familiar ou suporte.</p>
+      <button class="btn-deaf-action" onclick="openLibrasSupport()">📱 Suporte por Texto / Libras</button>
+    </section>
+
     <!-- Seção de Emergência -->
     <section class="emergency-box" id="card-emergency">
       <h2>Precisa de Ajuda Imediata?</h2>
       <p>Se você suspeitar de um crime ou emergência, acione a Polícia Militar:</p>
-      <a href="tel:190" class="btn-emergency" aria-label="Ligar para a polícia número 190">🚨 LIGAR 190</a>
+      <a href="tel:190" class="btn-emergency" onclick="triggerVisualAlert()" aria-label="Ligar para a polícia número 190">🚨 LIGAR 190</a>
       <div style="margin-top: 15px;">
         <button class="btn-audio-card" onclick="readCard('card-emergency')" aria-label="Ouvir informação de emergência">🔊 Ouvir emergência</button>
       </div>

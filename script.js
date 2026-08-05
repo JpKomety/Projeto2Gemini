@@ -11,10 +11,30 @@ function toggleContrast() {
   document.body.classList.toggle('high-contrast');
 }
 
+// Alternar Modo Visual/Surdo (Aumenta o contraste visual e destaca opções de texto)
+function toggleDeafMode() {
+  document.body.classList.toggle('deaf-mode');
+  const active = document.body.classList.contains('deaf-mode');
+  alert(active ? "Modo para Surdos ativado! Textos e indicações visuais foram destacados." : "Modo para Surdos desativado.");
+}
+
+// Alerta visual de emergência ao clicar no 190
+function triggerVisualAlert() {
+  const alertBanner = document.getElementById('visual-alert');
+  alertBanner.hidden = false;
+  setTimeout(() => {
+    alertBanner.hidden = true;
+  }, 5000);
+}
+
+// Ação para Suporte em Libras ou Texto
+function openLibrasSupport() {
+  alert("Iniciando canal de atendimento por texto / videochamada adaptada em Libras.");
+}
+
 // Leitura geral por Voz (Web Speech API)
 function readPageContent() {
   window.speechSynthesis.cancel();
-
   const textToRead = document.getElementById('main-content').innerText;
   speakText(textToRead);
 }
@@ -24,7 +44,6 @@ function readCard(cardId) {
   window.speechSynthesis.cancel();
 
   const cardElement = document.getElementById(cardId);
-  // Pega o texto do cartão sem o texto do próprio botão
   const title = cardElement.querySelector('h2') ? cardElement.querySelector('h2').innerText : '';
   const text = cardElement.querySelector('p') ? cardElement.querySelector('p').innerText : '';
 
@@ -34,7 +53,7 @@ function readCard(cardId) {
 function speakText(text) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'pt-BR';
-  utterance.rate = 0.9; // Velocidade ligeiramente pausada para clareza
+  utterance.rate = 0.9;
   window.speechSynthesis.speak(utterance);
 }
 
