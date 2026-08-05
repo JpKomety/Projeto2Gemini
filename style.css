@@ -1,0 +1,154 @@
+:root {
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-color: #1a252c;
+  --primary-color: #0d5c75;
+  --accent-color: #e67e22;
+  --emergency-color: #c0392b;
+  --btn-hover: #083b4a;
+  --font-scale: 1;
+}
+
+/* Estilo para Alto Contraste */
+body.high-contrast {
+  --bg-color: #000000;
+  --card-bg: #121212;
+  --text-color: #ffffff;
+  --primary-color: #ffff00;
+  --accent-color: #00ffff;
+  --btn-hover: #cccc00;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: calc(18px * var(--font-scale));
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Barra de Acessibilidade */
+.accessibility-bar {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.accessibility-bar button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.accessibility-bar button:hover,
+.accessibility-bar button:focus {
+  outline: 3px solid #ffcc00;
+  background-color: #e0e0e0;
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px 10px;
+}
+
+h1 {
+  font-size: calc(2.2rem * var(--font-scale));
+  margin-bottom: 10px;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 8px solid var(--accent-color);
+}
+
+.card h2 {
+  font-size: calc(1.5rem * var(--font-scale));
+  margin-top: 0;
+}
+
+.btn-audio-card {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: 2px solid var(--text-color);
+  padding: 8px 16px;
+  font-size: calc(1rem * var(--font-scale));
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.high-contrast .btn-audio-card {
+  background-color: #000000;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+.btn-audio-card:hover,
+.btn-audio-card:focus {
+  outline: 3px solid var(--accent-color);
+  opacity: 0.9;
+}
+
+/* Botão de Emergência */
+.emergency-box {
+  text-align: center;
+  background-color: #fadbd8;
+  border: 3px solid var(--emergency-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+body.high-contrast .emergency-box {
+  background-color: #330000;
+}
+
+.btn-emergency {
+  display: inline-block;
+  background-color: var(--emergency-color);
+  color: white !important;
+  font-size: calc(1.6rem * var(--font-scale));
+  font-weight: bold;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-emergency:hover,
+.btn-emergency:focus {
+  background-color: #922b21;
+  outline: 4px solid #ff0000;
+}

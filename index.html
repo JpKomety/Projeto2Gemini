@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua Segurança Digital - Guia Fácil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de Acessibilidade Superior -->
+  <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
+    <button onclick="changeFontSize(0.1)" aria-label="Aumentar tamanho do texto">A+ Aumentar Texto</button>
+    <button onclick="changeFontSize(-0.1)" aria-label="Diminuir tamanho do texto">A- Diminuir Texto</button>
+    <button onclick="toggleContrast()" aria-label="Alternar alto contraste">Alto Contraste</button>
+    <button onclick="readPageContent()" aria-label="Ouvir todo o conteúdo da página">🔊 Ler Tudo</button>
+    <button onclick="stopSpeech()" aria-label="Parar leitura em voz alta">⏹️ Parar Voz</button>
+  </div>
+
+  <header>
+    <h1>Segurança Digital Fácil</h1>
+    <p>Dicas simples para navegar na internet sem medo e de forma segura.</p>
+  </header>
+
+  <main id="main-content">
+    <section class="card" id="card-1">
+      <h2>1. Cuidado com Links Estranhos</h2>
+      <p>Nunca clique em links enviados por mensagens de pessoas desconhecidas no WhatsApp ou no e-mail. Bancos e lojas não pedem senhas pelo WhatsApp.</p>
+      <button class="btn-audio-card" onclick="readCard('card-1')" aria-label="Ouvir dica sobre cuidado com links estranhos">🔊 Ouvir esta dica</button>
+    </section>
+
+    <section class="card" id="card-2">
+      <h2>2. Crie Senhas Fortes</h2>
+      <p>Evite usar datas de nascimento ou nomes de familiares. Misture letras, números e símbolos simples. Guarde suas senhas em um caderno em local seguro.</p>
+      <button class="btn-audio-card" onclick="readCard('card-2')" aria-label="Ouvir dica sobre como criar senhas fortes">🔊 Ouvir esta dica</button>
+    </section>
+
+    <section class="card" id="card-3">
+      <h2>3. Desconfie de Ofertas Exageradas</h2>
+      <p>Se um produto estiver muito barato ou prometendo dinheiro fácil, pode ser um golpe. Peça ajuda a um familiar antes de realizar qualquer compra online.</p>
+      <button class="btn-audio-card" onclick="readCard('card-3')" aria-label="Ouvir dica sobre ofertas exageradas">🔊 Ouvir esta dica</button>
+    </section>
+
+    <!-- Seção de Emergência -->
+    <section class="emergency-box" id="card-emergency">
+      <h2>Precisa de Ajuda Imediata?</h2>
+      <p>Se você suspeitar de um crime ou emergência, acione a Polícia Militar:</p>
+      <a href="tel:190" class="btn-emergency" aria-label="Ligar para a polícia número 190">🚨 LIGAR 190</a>
+      <div style="margin-top: 15px;">
+        <button class="btn-audio-card" onclick="readCard('card-emergency')" aria-label="Ouvir informação de emergência">🔊 Ouvir emergência</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
